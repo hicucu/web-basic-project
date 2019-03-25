@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>잔고 어때?</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit-core-rtl.css" />
+
+    <style>
+        /*  tag */
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            background-color: #1e87f0;
+        }
+
+        /*  id  */
+        #card-main-date {
+            float: right;
+            padding: 0px 20px;
+        }
+
+        #card-header {
+            display: inline-block;
+            width: 100%;
+        }
+        #card-header-title{
+                display: inline-block;
+        }
+        #card-header-button{
+            float: right;            
+        }
+
+
+
+        /*  class  */
+        .uk-card-title {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<!--body-->
+
+<body id="body">
+
+    <!--wrap-->
+    <div id="wrap">
+
+
+
+
+        <!--modal-->        
+        <div id="modal_origin">
+            <div id="modal_box">
+
+            </div>
+        </div>
+        <!--modal-->
+
+
+
+        <!--main-->
+        <div class="uk-section uk-section-primary uk-preserve-color">
+            <div class="uk-container">
+
+                <!--cards-->
+                <div id="main-card">
+
+                    <!--card-->
+                    <div id="card-header" class="uk-panel uk-light uk-margin-medium">
+                        <h3 id="card-header-title">잔고 어때?</h3>
+                        <div id="card-header-button">
+                            <a href="#" uk-icon="icon: plus"></a>                            
+                        </div>
+                    </div>
+                    <div class="uk-grid-match uk-child-width-expand@m" uk-grid> 
+                        <div>
+
+
+                            <!--card-main-->
+                            <div class="uk-card uk-card-default uk-card-body">
+                                <h3 class="uk-card-title">Default</h3>
+                                <span id="card-main-date" class="uk-badge">2019.03.25</span>
+                                <div class="uk-grid-small" uk-grid>
+                                    <div class="uk-width-expand" uk-leader="fill: -">
+                                        <span class="uk-label-danger">시발비용</span>
+                                        <span class="uk-label-warning">꽁돈생기면</span>
+                                        <span class="uk-label-success">고민 중</span>
+                                        <span class="uk-label">사줘</span>
+                                    </div>
+                                    <div id="card-main-price">
+                                        $20.90
+                                    </div>
+                                </div>
+                            </div>
+                            <!--card-main-->
+
+                        </div>
+                    </div>
+                    <!--card-->
+                </div>
+
+                <!--cards-->
+
+
+
+            </div>
+        </div>
+        <!--main-->
+
+        <!--footer-->
+        <div id="footer">
+            
+            
+
+        </div>
+        <!--footer-->
+
+        
+
+
+    </div>
+    <!--wrap-->
+
+
+    <!--script-->
+    <script type="text/javascript">
+        document.getElementById("body").style.height = window.innerHeight + 'px';
+
+
+
+        window.onresize = function (event) {
+            document.getElementById("body").style.height = window.innerHeight + 'px';
+
+        }
+    </script>
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+    <!-- UIkit JS -->
+
+    <!--script-->
+</body>
+<!--body-->
+
+
+</html>
