@@ -7,62 +7,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit-core-rtl.css" />
-
-    <style>
-        /*  tag */
-        * {
-            padding: 0px;
-            margin: 0px;
-        }
-
-        body {
-            background-color: #1e87f0;
-        }
-
-        /*  id  */
-        #card-main-date {
-            float: right;
-            padding: 0px 20px;
-        }
-
-        #card-header {
-            display: inline-block;
-            width: 100%;
-        }
-
-        #card-header-title {
-            display: inline-block;
-        }
-
-
-        #card-header-button {
-            float: right;
-        }
-        #footer{
-            background-color:#081b30;
-            width: 100%;
-            height: 200px;
-            color:#fff;
-            position: absolute;
-            bottom: 0px;   
-            text-align: right;
-        }
-        #footer h2{
-            color: #fff;
-            text-align: left;
-
-        }
-
-
-        /*  class  */
-        .uk-card-title {
-            display: inline-block;    
-        }
-
-        .uk-modal-dialog uk-modal-body {
-            width: 600px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/shopping_spree.css" />
+    <script src="js/shopping_spree.js"></script>
 </head>
 
 <!--body-->
@@ -152,7 +98,7 @@
 
 
         <!--main-->
-        <div class="uk-section uk-section-primary uk-preserve-color">
+        <div id="main" class="uk-section uk-section-primary uk-preserve-color">
             <div class="uk-container">
 
                 <!--cards-->
@@ -168,6 +114,8 @@
                     <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
                         <div>
 
+
+                            
 
                             <!--card-main-->
                             <div class="uk-card uk-card-default uk-card-body">
@@ -186,6 +134,7 @@
                                 </div>
                             </div>
                             <!--card-main-->
+
 
                         </div>
                     </div>
@@ -222,17 +171,6 @@
     <!--wrap-->
 
 
-    <!--script-->
-    <script type="text/javascript">
-        document.getElementById("body").style.height = window.innerHeight + 'px';
-
-
-
-        window.onresize = function (event) {
-            document.getElementById("body").style.height = window.innerHeight + 'px';
-
-        }
-    </script>
 
     <!-- UIkit JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
