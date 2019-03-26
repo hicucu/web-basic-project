@@ -16,13 +16,22 @@
 .uk-modal-title{
     text-align: center; /*모달의 타이틀 가운데 정렬*/
 }
-.uk-button uk-button-primary{
+.uk-button.uk-button-primary{
     float : right; /*저장버튼 오른쪽으로 보내버림*/
 }
-.uk-modal-close-default uk-close uk-icon{
+.uk-modal-close-default.uk-close.uk-icon{
     float: right;
     position: relative; /*모달 닫기버튼 오른쪽으로 보냄*/
 }
 .uk-button.uk-button-default.uk-icon{
-    background-color: #1e87f0; 
+    background-color: #1e87f0;  /*버튼 백그라운드 색상*/
+}
+.uk-modal-title{
+    font-size: 30px;              /*제목 30px*/     
+}
+.uk-input, .uk-select, .uk-textarea{
+    font-size: 25px;                /*입력, 선택창, 텍스트 25px*/
+}
+.uk-button uk-button-primary{
+    font-size: 15px;                /* 버튼 15px*/
 }
