@@ -1,0 +1,43 @@
+ /*  tag */
+ * {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #1e87f0;
+    min-width: 600px;
+}
+
+/*  id  */
+#card-main-date {
+    float: right;
+    padding: 0px 20px;
+}
+
+#card-header {
+    display: inline-block;
+    width: 100%;
+}
+
+#card-header-title {
+    display: inline-block;
+}
+
+
+#card-header-button {
+    float: right;
+}
+
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 25px;
+}
+h4{
+    font-size: 15px;
+}
