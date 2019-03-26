@@ -29,16 +29,15 @@ body {
     float: right;
 }
 
-#modal_origin{
-    display: none;
+h1{
+    font-size: 40px;
 }
-
-
-/*  class  */
-.uk-card-title {
-    display: inline-block;    
+h2{
+    font-size: 30px;
 }
-
-.uk-modal-dialog uk-modal-body {
-    width: 600px;
+h3{
+    font-size: 25px;
+}
+h4{
+    font-size: 15px;
 }
