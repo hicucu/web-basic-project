@@ -50,18 +50,18 @@
                             <div class="uk-margin">
                                 <select id = "priority" class="uk-select" value="우선순위를 선택하세요">
                                     <option>우선순위를 선택하세요</option>
-                                    <option>우선순위 01</option>
-                                    <option>우선순위 02</option>
-                                    <option>우선순위 03</option>
-                                    <option>우선순위 04</option>
-                                    <option>우선순위 05</option>
+                                    <option>사줘</option>
+                                    <option>시발비용</option>
+                                    <option>꽁돈생기면</option>
+                                    <option>고민 중</option>
+                                    
                                 </select>
                             </div>
 
                             <div class="uk-margin">
                                 <textarea id = "reason" class="uk-textarea" rows="5" placeholder="이유"></textarea>
                             </div>
-                            <div><button class="uk-button uk-button-primary">저장</button></div><!-- 저장3-->
+                            <div><button id="uk-button-save" class="uk-button uk-button-primary uk-modal-close" type="button">저장</button></div><!-- 저장3-->
 
                         </fieldset>
                     </form>
@@ -93,28 +93,12 @@
                         </div>
                     </div>
                     <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
-                        <div>
+                        <div id="card-list">
 
 
 
 
-                            <!--card-main-->
-                            <div class="uk-card uk-card-default uk-card-body">
-                                <h3 class="uk-card-title">Default</h3>
-                                <span id="card-main-date" class="uk-badge">2019.03.25</span>
-                                <div class="uk-grid-small" uk-grid>
-                                    <div class="uk-width-expand" uk-leader="fill: -">
-                                        <span class="uk-label-danger">시발비용</span>
-                                        <span class="uk-label-warning">꽁돈생기면</span>
-                                        <span class="uk-label-success">고민 중</span>
-                                        <span class="uk-label">사줘</span>
-                                    </div>
-                                    <div id="card-main-price">
-                                        $20.90
-                                    </div>
-                                </div>
-                            </div>
-                            <!--card-main-->
+                            
 
 
                         </div>
