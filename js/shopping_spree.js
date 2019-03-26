@@ -45,34 +45,27 @@ function addShoppingItme(shoppingItem) {
 
     var buttonHtml = "";
     if (priority == "사줘")
-        buttonHtml = '<h4><span class="uk-label-danger">사줘</span></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label-danger">사줘</span></h4>';
     else if (priority == "시발비용")
-        buttonHtml = '<h4><span class="uk-label-danger">시발비용</span></h4></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label-danger">시발비용</span></h4></h4>';
     else if (priority == "꽁돈생기면")
-        buttonHtml = '<h4><span class="uk-label-warning">꽁돈생기면</span></h4>';
-    else buttonHtml='<h4><span class="uk-label-success">고민 중</span></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label-warning">꽁돈생기면</span></h4>';
+    else buttonHtml='<h4 class="inline-block"><span class="uk-label-success">고민 중</span></h4>';
 
 
 
     var card =
         '<div class="shopping-card uk-card uk-card-default uk-card-body">' +
-        '<h3 class="uk-card-title" id="card-title">'+
-        title+
-        '</h3>' +
-        '<span id="card-main-date" class="uk-badge">'+
-        date+
-        '</span>' +
-        '<div class="uk-grid-small" uk-grid>' +
-        buttonHtml+
-        '<div class="uk-width-expand" uk-leader="fill: -">' +
-        '</div>' +
-        '<div id="card-main-price">'+
-        price+
-        '</div>' +
-        '</div>' +
-        '<div id="card-path">' +
-        path+
-        '</div>' +
+            '<h3 class="uk-card-title" id="card-title">'+title+'</h3>' +
+            '<span id="card-main-date" class="uk-badge">'+date+'</span>' +
+            '<div class="uk-grid-small" uk-grid>' +
+                '<div class="uk-width-expand" uk-leader="fill: -">' +
+                    buttonHtml+
+                '</div>' +
+                '<div id="card-main-price">'+price+'</div>' +
+            '</div>' +
+            '<div id="card-hide">' +path+'</div>' +
+            '<div id="card-hide">' +reason+'</div>' +
         '</div>';
 
 
@@ -89,10 +82,10 @@ function saveShoppingList(){
         var shoppingItem = {};
         shoppingItem["title"]=$('.shopping-card')[i].children[0].innerText;
         shoppingItem["path"]=$('.shopping-card')[i].children[3].innerText
-        shoppingItem["price"]=$('.shopping-card')[i].children[2].children[2].innerText;
+        shoppingItem["price"]=$('.shopping-card')[i].children[2].children[1].innerText;
         shoppingItem["date"]=$('.shopping-card')[i].children[1].innerText;
-        shoppingItem["priority"]=$('.shopping-card')[i].children[2].children[0].children[0].innerText;
-        shoppingItem["reason"]=$('.shopping-card')[i].children[2].children[0].innerText;
+        shoppingItem["priority"]=$('.shopping-card')[i].children[2].children[0].innerText;
+        shoppingItem["reason"]=$('.shopping-card')[i].children[4].innerText
         
         var stringify = JSON.stringify(shoppingItem);
         _shoppingList[i]=stringify;
