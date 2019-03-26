@@ -23,3 +23,6 @@
     float: right;
     position: relative; /*모달 닫기버튼 오른쪽으로 보냄*/
 }
+.uk-button.uk-button-default.uk-icon{
+    background-color: #1e87f0; 
+}
