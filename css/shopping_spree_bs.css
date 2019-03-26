@@ -1,0 +1,13 @@
+#modal_origin{
+    display: none;
+}
+
+
+/*  class  */
+.uk-card-title {
+    display: inline-block;    
+}
+
+.uk-modal-dialog uk-modal-body {
+    width: 600px;
+}
