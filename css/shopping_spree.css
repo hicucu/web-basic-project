@@ -29,6 +29,14 @@ body {
     float: right;
 }
 
+#card-hide{
+    display: none;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
 h1{
     font-size: 40px;
     padding: 0px;
