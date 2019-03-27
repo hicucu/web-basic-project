@@ -47,6 +47,9 @@ body {
 .uk-label-blue{
     background-color:#1e87f0;
 }
+.card-title-close{
+    padding-left: 10px;    
+}
 
 h1{
     font-size: 40px;
