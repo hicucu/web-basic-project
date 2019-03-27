@@ -40,8 +40,9 @@ body {
 .main-card-filter{
     display: inline-block;    
     background-color: white;
-    padding: 5px;
+    padding: 5px 20px;
     height: 38px;
+    border-radius: 20px;
 }
 .uk-label-blue{
     background-color:#1e87f0;
