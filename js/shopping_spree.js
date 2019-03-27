@@ -57,6 +57,7 @@ function addShoppingItme(shoppingItem) {
     var card =
         '<div class="shopping-card uk-card uk-card-default uk-card-body">' +
             '<h3 class="uk-card-title" id="card-title">'+title+'</h3>' +
+            '<span class="card-title-close" uk-icon="close"></span>'+
             '<span id="card-main-date" class="uk-badge">'+date+'</span>' +
             '<div class="uk-grid-small" uk-grid>' +
                 '<div class="uk-width-expand" uk-leader="fill: -">' +
