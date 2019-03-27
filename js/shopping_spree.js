@@ -45,12 +45,12 @@ function addShoppingItme(shoppingItem) {
 
     var buttonHtml = "";
     if (priority == "사줘")
-        buttonHtml = '<h4 class="inline-block"><span class="uk-label">사줘</span></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label sort-blue">사줘</span></h4>';
     else if (priority == "시발비용")
-        buttonHtml = '<h4 class="inline-block"><span class="uk-label-danger">시발비용</span></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label-danger sort-red">시발비용</span></h4>';
     else if (priority == "꽁돈생기면")
-        buttonHtml = '<h4 class="inline-block"><span class="uk-label-warning">꽁돈생기면</span></h4>';
-    else buttonHtml='<h4 class="inline-block"><span class="uk-label-success">고민 중</span></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label-warning sort-yellow">꽁돈생기면</span></h4>';
+    else buttonHtml='<h4 class="inline-block"><span class="uk-label-success sort-green">고민 중</span></h4>';
 
 
 
@@ -124,3 +124,47 @@ function buttonClickSave(){
     addShoppingItme(shoppingItem);
     saveShoppingList();
 }
+
+$('#filter-button-blue').click(function () { 
+
+    $('.sort-blue').parent().parent().parent().parent().parent().show();
+    $('.sort-red').parent().parent().parent().parent().parent().hide();
+    $('.sort-yellow').parent().parent().parent().parent().parent().hide();
+    $('.sort-green').parent().parent().parent().parent().parent().hide();
+
+
+});
+$('#filter-button-red').click(function () {
+    $('.sort-blue').parent().parent().parent().parent().parent().hide();
+    $('.sort-red').parent().parent().parent().parent().parent().show();
+    $('.sort-yellow').parent().parent().parent().parent().parent().hide();
+    $('.sort-green').parent().parent().parent().parent().parent().hide();
+
+
+});
+
+$('#filter-button-yellow').click(function () {
+    $('.sort-blue').parent().parent().parent().parent().parent().hide();
+    $('.sort-red').parent().parent().parent().parent().parent().hide();
+    $('.sort-yellow').parent().parent().parent().parent().parent().show();
+    $('.sort-green').parent().parent().parent().parent().parent().hide();
+
+});
+$('#filter-button-green').click(function () {
+
+    $('.sort-blue').parent().parent().parent().parent().parent().hide();
+    $('.sort-red').parent().parent().parent().parent().parent().hide();
+    $('.sort-yellow').parent().parent().parent().parent().parent().hide();
+    $('.sort-green').parent().parent().parent().parent().parent().show();
+
+
+});
+$('#filter-button-all').click(function () { //전부보여주기 로고클릭해야함
+
+    $('.sort-blue').parent().parent().parent().parent().parent().hide();
+    $('.sort-red').parent().parent().parent().parent().parent().hide();
+    $('.sort-yellow').parent().parent().parent().parent().parent().hide();
+    $('.sort-green').parent().parent().parent().parent().parent().show();
+
+
+});
