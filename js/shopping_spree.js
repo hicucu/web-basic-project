@@ -6,7 +6,7 @@ var _listCount = 0;
 $(document).ready(function () {
     setMinHeight();
     loadShoppingList();
-
+    
     $(document).on('click', '#uk-button-save', function (e) {
         
         buttonClickSave();
@@ -45,9 +45,9 @@ function addShoppingItme(shoppingItem) {
 
     var buttonHtml = "";
     if (priority == "사줘")
-        buttonHtml = '<h4 class="inline-block"><span class="uk-label-danger">사줘</span></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label">사줘</span></h4>';
     else if (priority == "시발비용")
-        buttonHtml = '<h4 class="inline-block"><span class="uk-label-danger">시발비용</span></h4></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label-danger">시발비용</span></h4>';
     else if (priority == "꽁돈생기면")
         buttonHtml = '<h4 class="inline-block"><span class="uk-label-warning">꽁돈생기면</span></h4>';
     else buttonHtml='<h4 class="inline-block"><span class="uk-label-success">고민 중</span></h4>';
@@ -68,8 +68,15 @@ function addShoppingItme(shoppingItem) {
             '<div id="card-hide">' +reason+'</div>' +
         '</div>';
 
-
     $('#card-list').append(card);
+
+    $(".uk-card-body").off();
+    $(".uk-card-body").on("click", function(e){        
+        var path = $(this)[0].children[3].innerText;        
+        window.open(path);
+    });
+
+    
 }
 
 function saveShoppingList(){
@@ -81,7 +88,7 @@ function saveShoppingList(){
     for(var i=0; i<cards.length; i++){
         var shoppingItem = {};
         shoppingItem["title"]=$('.shopping-card')[i].children[0].innerText;
-        shoppingItem["path"]=$('.shopping-card')[i].children[3].innerText
+        shoppingItem["path"]=$('.shopping-card')[i].children[3].innerText;
         shoppingItem["price"]=$('.shopping-card')[i].children[2].children[1].innerText;
         shoppingItem["date"]=$('.shopping-card')[i].children[1].innerText;
         shoppingItem["priority"]=$('.shopping-card')[i].children[2].children[0].innerText;
