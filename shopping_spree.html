@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="css/shopping_spree.css" />
     <link rel="stylesheet" href="css/shopping_spree_bs.css" />
     <link rel="stylesheet" href="css/shopping_spree_gy.css" />
-    <script src="js/shopping_spree.js"></script>
 </head>
 
 <!--body-->
@@ -72,6 +71,8 @@
                             <div><button id="uk-button-save" class="uk-button uk-button-primary uk-modal-close"
                                     type="button">저장</button></div><!-- 저장3-->
 
+                            
+
                         </fieldset>
                     </form>
 
@@ -97,13 +98,15 @@
                         <h1 id="card-header-title">잔고 어때?</h1>
                         <div id="card-header-button">
 
+
                             <div class="main-card-filter">
-                                <h4 class="inline-block"><span class="uk-label-blue">사줘</span></h4>
-                                <h4 class="inline-block"><span class="uk-label-danger uk-label-border">시발비용</span></h4>
-                                <h4 class="inline-block"><span class="uk-label-warning uk-label-border">꽁돈생기면</span></h4>
-                                <h4 class="inline-block"><span class="uk-label-success uk-label-border">고민 중</span></h4>
+                                <h4 class="inline-block"><span class="uk-label-blue" id="filter-button-blue">사줘</span></h4>
+                                <h4 class="inline-block"><span class="uk-label-danger uk-label-border" id="filter-button-red">시발비용</span></h4>
+                                <h4 class="inline-block"><span class="uk-label-warning uk-label-border" id="filter-button-yellow">꽁돈생기면</span></h4>
+                                <h4 class="inline-block"><span class="uk-label-success uk-label-border" id="filter-button-green">고민 중</span></h4>
                             </div>
                             <a class="uk-button" href="#modal-container" uk-icon="icon: plus" uk-toggle></a>
+
                         </div>
                     </div>
                     <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
@@ -174,6 +177,13 @@
     <!--wrap-->
 
 
+
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="js/shopping_spree.js"></script>
 
 
     <!--script-->
