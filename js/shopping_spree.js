@@ -117,3 +117,49 @@ function buttonClickSave(){
     addShoppingItme(shoppingItem);
     saveShoppingList();
 }
+
+$('#button2').click(function () { //버튼 2를 누르면, 클래스가 cn인애들, cn이 아닌애들까지 다 보여준다. 여기서 cn은 완료
+
+    $('.uk-label-danger').parent().parent().parent().parent().parent().show();
+    $('.uk-label-warning').parent().parent().parent().parent().parent().show();
+    $('.uk-label-success').parent().parent().parent().parent().parent().show();
+    $('.uk-label').parent().parent().parent().parent().parent().show();
+
+
+});
+$('#button3').click(function () {
+    $('.uk-label-danger').parent().parent().parent().parent().parent().show();
+    $('.uk-label-warning').parent().parent().parent().parent().parent().hide();
+    $('.uk-label-success').parent().parent().parent().parent().parent().hide();
+    $('.uk-label').parent().parent().parent().parent().parent().hide();
+
+
+});
+
+$('#button4').click(function () {
+
+    $('.uk-label-danger').parent().parent().parent().parent().parent().hide();
+    $('.uk-label-warning').parent().parent().parent().parent().parent().show();
+    $('.uk-label-success').parent().parent().parent().parent().parent().hide();
+    $('.uk-label').parent().parent().parent().parent().parent().hide();
+
+
+});
+$('#button5').click(function () {
+
+    $('.uk-label-danger').parent().parent().parent().parent().parent().hide();
+    $('.uk-label-warning').parent().parent().parent().parent().parent().hide();
+    $('.uk-label-success').parent().parent().parent().parent().parent().show();
+    $('.uk-label').parent().parent().parent().parent().parent().hide();
+
+
+});
+$('#button6').click(function () {
+
+    $('.uk-label-danger').parent().parent().parent().parent().parent().hide();
+    $('.uk-label-warning').parent().parent().parent().parent().parent().hide();
+    $('.uk-label-success').parent().parent().parent().parent().parent().hide();
+    $('.uk-label').parent().parent().parent().parent().parent().show();
+
+
+});
