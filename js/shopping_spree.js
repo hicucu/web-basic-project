@@ -6,7 +6,7 @@ var _listCount = 0;
 $(document).ready(function () {
     setMinHeight();
     loadShoppingList();
-
+    
     $(document).on('click', '#uk-button-save', function (e) {
         
         buttonClickSave();
@@ -45,12 +45,12 @@ function addShoppingItme(shoppingItem) {
 
     var buttonHtml = "";
     if (priority == "사줘")
-        buttonHtml = '<h4 class="inline-block"><span class="uk-label-danger">사줘</span></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label sort-blue">사줘</span></h4>';
     else if (priority == "시발비용")
-        buttonHtml = '<h4 class="inline-block"><span class="uk-label-danger">시발비용</span></h4></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label-danger sort-red">시발비용</span></h4>';
     else if (priority == "꽁돈생기면")
-        buttonHtml = '<h4 class="inline-block"><span class="uk-label-warning">꽁돈생기면</span></h4>';
-    else buttonHtml='<h4 class="inline-block"><span class="uk-label-success">고민 중</span></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label-warning sort-yellow">꽁돈생기면</span></h4>';
+    else buttonHtml='<h4 class="inline-block"><span class="uk-label-success sort-green">고민 중</span></h4>';
 
 
 
@@ -68,8 +68,15 @@ function addShoppingItme(shoppingItem) {
             '<div id="card-hide">' +reason+'</div>' +
         '</div>';
 
-
     $('#card-list').append(card);
+
+    $(".uk-card-body").off();
+    $(".uk-card-body").on("click", function(e){        
+        var path = $(this)[0].children[3].innerText;        
+        window.open(path);
+    });
+
+    
 }
 
 function saveShoppingList(){
@@ -81,7 +88,7 @@ function saveShoppingList(){
     for(var i=0; i<cards.length; i++){
         var shoppingItem = {};
         shoppingItem["title"]=$('.shopping-card')[i].children[0].innerText;
-        shoppingItem["path"]=$('.shopping-card')[i].children[3].innerText
+        shoppingItem["path"]=$('.shopping-card')[i].children[3].innerText;
         shoppingItem["price"]=$('.shopping-card')[i].children[2].children[1].innerText;
         shoppingItem["date"]=$('.shopping-card')[i].children[1].innerText;
         shoppingItem["priority"]=$('.shopping-card')[i].children[2].children[0].innerText;
@@ -118,48 +125,46 @@ function buttonClickSave(){
     saveShoppingList();
 }
 
-$('#button2').click(function () { //버튼 2를 누르면, 클래스가 cn인애들, cn이 아닌애들까지 다 보여준다. 여기서 cn은 완료
+$('#filter-button-blue').click(function () { 
 
-    $('.uk-label-danger').parent().parent().parent().parent().parent().show();
-    $('.uk-label-warning').parent().parent().parent().parent().parent().show();
-    $('.uk-label-success').parent().parent().parent().parent().parent().show();
-    $('.uk-label').parent().parent().parent().parent().parent().show();
-
-
-});
-$('#button3').click(function () {
-    $('.uk-label-danger').parent().parent().parent().parent().parent().show();
-    $('.uk-label-warning').parent().parent().parent().parent().parent().hide();
-    $('.uk-label-success').parent().parent().parent().parent().parent().hide();
-    $('.uk-label').parent().parent().parent().parent().parent().hide();
+    $('.sort-blue').parent().parent().parent().parent().parent().show();
+    $('.sort-red').parent().parent().parent().parent().parent().hide();
+    $('.sort-yellow').parent().parent().parent().parent().parent().hide();
+    $('.sort-green').parent().parent().parent().parent().parent().hide();
 
 
 });
-
-$('#button4').click(function () {
-
-    $('.uk-label-danger').parent().parent().parent().parent().parent().hide();
-    $('.uk-label-warning').parent().parent().parent().parent().parent().show();
-    $('.uk-label-success').parent().parent().parent().parent().parent().hide();
-    $('.uk-label').parent().parent().parent().parent().parent().hide();
+$('#filter-button-red').click(function () {
+    $('.sort-blue').parent().parent().parent().parent().parent().hide();
+    $('.sort-red').parent().parent().parent().parent().parent().show();
+    $('.sort-yellow').parent().parent().parent().parent().parent().hide();
+    $('.sort-green').parent().parent().parent().parent().parent().hide();
 
 
 });
-$('#button5').click(function () {
 
-    $('.uk-label-danger').parent().parent().parent().parent().parent().hide();
-    $('.uk-label-warning').parent().parent().parent().parent().parent().hide();
-    $('.uk-label-success').parent().parent().parent().parent().parent().show();
-    $('.uk-label').parent().parent().parent().parent().parent().hide();
+$('#filter-button-yellow').click(function () {
+    $('.sort-blue').parent().parent().parent().parent().parent().hide();
+    $('.sort-red').parent().parent().parent().parent().parent().hide();
+    $('.sort-yellow').parent().parent().parent().parent().parent().show();
+    $('.sort-green').parent().parent().parent().parent().parent().hide();
+
+});
+$('#filter-button-green').click(function () {
+
+    $('.sort-blue').parent().parent().parent().parent().parent().hide();
+    $('.sort-red').parent().parent().parent().parent().parent().hide();
+    $('.sort-yellow').parent().parent().parent().parent().parent().hide();
+    $('.sort-green').parent().parent().parent().parent().parent().show();
 
 
 });
-$('#button6').click(function () {
+$('#filter-button-all').click(function () { //전부보여주기 로고클릭해야함
 
-    $('.uk-label-danger').parent().parent().parent().parent().parent().hide();
-    $('.uk-label-warning').parent().parent().parent().parent().parent().hide();
-    $('.uk-label-success').parent().parent().parent().parent().parent().hide();
-    $('.uk-label').parent().parent().parent().parent().parent().show();
+    $('.sort-blue').parent().parent().parent().parent().parent().hide();
+    $('.sort-red').parent().parent().parent().parent().parent().hide();
+    $('.sort-yellow').parent().parent().parent().parent().parent().hide();
+    $('.sort-green').parent().parent().parent().parent().parent().show();
 
 
 });

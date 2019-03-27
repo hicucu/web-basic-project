@@ -37,6 +37,16 @@ body {
     display: inline-block;
 }
 
+.main-card-filter{
+    display: inline-block;    
+    background-color: white;
+    padding: 5px;
+    height: 38px;
+}
+.uk-label-blue{
+    background-color:#1e87f0;
+}
+
 h1{
     font-size: 40px;
     padding: 0px;
