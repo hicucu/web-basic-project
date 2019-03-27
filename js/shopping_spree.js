@@ -159,12 +159,10 @@ $('#filter-button-green').click(function () {
 
 
 });
-$('#filter-button-all').click(function () { //전부보여주기 로고클릭해야함
+$('#card-header-title').click(function () { //전부보여주기 로고클릭해야함
 
-    $('.sort-blue').parent().parent().parent().parent().parent().hide();
-    $('.sort-red').parent().parent().parent().parent().parent().hide();
-    $('.sort-yellow').parent().parent().parent().parent().parent().hide();
+    $('.sort-blue').parent().parent().parent().parent().parent().show();
+    $('.sort-red').parent().parent().parent().parent().parent().show();
+    $('.sort-yellow').parent().parent().parent().parent().parent().show();
     $('.sort-green').parent().parent().parent().parent().parent().show();
-
-
 });
