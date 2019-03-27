@@ -57,7 +57,8 @@ function addShoppingItme(shoppingItem) {
     var card =
         '<div class="shopping-card uk-card uk-card-default uk-card-body">' +
             '<h3 class="uk-card-title" id="card-title">'+title+'</h3>' +
-            '<span class="card-title-close" uk-icon="close"></span>'+
+            '<span class="card-title-close" uk-icon="close">'+
+            '</span>'+
             '<span id="card-main-date" class="uk-badge">'+date+'</span>' +
             '<div class="uk-grid-small" uk-grid>' +
                 '<div class="uk-width-expand" uk-leader="fill: -">' +
@@ -73,8 +74,14 @@ function addShoppingItme(shoppingItem) {
 
     $(".uk-card-body").off();
     $(".uk-card-body").on("click", function(e){        
-        var path = $(this)[0].children[3].innerText;        
+        var path = $(this)[0].children[4].innerText;        
         window.open(path);
+    });
+    $('.card-title-close').off();
+    $('.card-title-close').on("click", function(e){
+        $(this).parent().off();        
+        $(this).parent().remove();
+        saveShoppingList();
     });
 
     
@@ -89,11 +96,11 @@ function saveShoppingList(){
     for(var i=0; i<cards.length; i++){
         var shoppingItem = {};
         shoppingItem["title"]=$('.shopping-card')[i].children[0].innerText;
-        shoppingItem["path"]=$('.shopping-card')[i].children[3].innerText;
-        shoppingItem["price"]=$('.shopping-card')[i].children[2].children[1].innerText;
-        shoppingItem["date"]=$('.shopping-card')[i].children[1].innerText;
-        shoppingItem["priority"]=$('.shopping-card')[i].children[2].children[0].innerText;
-        shoppingItem["reason"]=$('.shopping-card')[i].children[4].innerText
+        shoppingItem["path"]=$('.shopping-card')[i].children[4].innerText;
+        shoppingItem["price"]=$('.shopping-card')[i].children[3].children[1].innerText;
+        shoppingItem["date"]=$('.shopping-card')[i].children[2].innerText;
+        shoppingItem["priority"]=$('.shopping-card')[i].children[3].children[0].innerText;
+        shoppingItem["reason"]=$('.shopping-card')[i].children[5].innerText
         
         var stringify = JSON.stringify(shoppingItem);
         _shoppingList[i]=stringify;
