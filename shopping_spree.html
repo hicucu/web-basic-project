@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="css/shopping_spree.css" />
     <link rel="stylesheet" href="css/shopping_spree_bs.css" />
     <link rel="stylesheet" href="css/shopping_spree_gy.css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="jquery-sakura.min.js"></script>
+    <link href="jquery-sakura.css" rel="stylesheet" type="text/css">
+
+
 </head>
 
 <!--body-->
@@ -107,8 +113,7 @@
                                 <h4 class="inline-block"><span class="uk-label-success uk-label-border btns" id="filter-button-green">고민 중</span></h4>
                             </div>
                             <a class="uk-button btns" href="#modal-container" uk-icon="icon: plus" uk-toggle></a>
-
-                        </div>
+  </div>
                     </div>
                     <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
                         <div id="card-list">
@@ -186,7 +191,13 @@
     <!-- UIkit JS -->
     <script src="js/shopping_spree.js"></script>
 
+    <script type="text/javascript">
 
+    $(window).load(function () {
+    $('body').sakura();
+});
+
+    </script>
     <!--script-->
 </body>
 <!--body-->
