@@ -50,17 +50,16 @@ $(document).ready(function () {
 
     });
 
-    $('.card-title-comment').off(); //기능꺼두고
-    $(document).on("click", '.card-title-comment', function (e) {
-        $('#modal-reason').show();
-        UIkit.modal('.uk-modal-dialog.uk-margin-auto-vertical').show();
-        // $('#modal-container').find('#reason').val
-        var key = $(this).attr("data-key");
-        var data = localStorage.getItem("ShoppingList");
-        data = JSON.parse(data);
-        var obj = JSON.parse(data[key])
-        $(".uk-modal-dialog.uk-margin-auto-vertical").text(obj.reason);
-    });
+
+    // $(document).on("click", '.card-title-comment', function (e) {
+    //     $('#modal-reason').show();
+    //     UIkit.modal('.uk-modal-dialog.uk-margin-auto-vertical').show();
+    //     var key = $(this).attr("data-key");
+    //     var data = localStorage.getItem("ShoppingList");
+    //     data = JSON.parse(data);
+    //     var obj = JSON.parse(data[key])
+    //     $(".uk-modal-dialog.uk-margin-auto-vertical").text(obj.reason);
+    // });
 
 
 
@@ -149,6 +148,19 @@ function addShoppingItme(shoppingItem, index) {
         UIkit.modal("#modal-container").show();
         e.preventDefault();        
     });
+
+    
+    $('.card-title-comment').on("click", function (e) {
+        $(".uk-card-body").off();
+        
+        UIkit.modal('.uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical').show();
+        var key = $(this).attr("data-key");
+        var data = localStorage.getItem("ShoppingList");
+        data = JSON.parse(data);
+        var obj = JSON.parse(data[key])
+        $(".uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical p").text(obj.reason);
+    });
+    
 }
 
 
