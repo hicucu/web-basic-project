@@ -11,6 +11,45 @@ $(document).ready(function () {
 
         buttonClickSave(e);
     });
+    // 추가버튼 클릭했을 떄
+    $('.uk-button').click(function() {
+        $('#modal-container').find('.uk-modal-title.add').show();
+        $('#modal-container').find('.uk-modal-title.edit').hide();
+    })
+
+    $('.uk-modal-close-default').click(function(){
+        $(".uk-card-body").off();
+        $(".uk-card-body").on("click", function (e) {
+            var path = $(this)[0].children[4].innerText;
+            window.open(path);
+        });
+        location.reload();
+    });
+
+    $('#edit-card').off(); //기능꺼두고
+    $(document).on("click", '.card-title-edit', function (e) { //수정하기를 클릭했을때
+        $(this).parent().parent().remove();
+
+        $(this).parent().parent().off(); //이친구의 부모에 부모꺼 오프
+
+        var currentCard = $(this).parent().parent();
+        
+        
+        $('#modal-container').find('.uk-modal-title.add').hide();
+        $('#modal-container').find('.uk-modal-title.edit').show();
+        UIkit.modal('#modal-container').show();
+
+        $('#modal-container').find('#title').val($(currentCard).find('#card-title').text());
+        $('#modal-container').find('#path').val($(currentCard).find('#card-path').text());
+        $('#modal-container').find('#price').val($(currentCard).find('#card-main-price').text());
+        $('#modal-container').find('#date').val($(currentCard).find('#card-main-date').text());
+        $('#modal-container').find('#priority').val($(currentCard).find('#card-fill').text());
+        $('#modal-container').find('#reason').val($(currentCard).find('#card-reason').text());
+
+
+
+    });
+
 });
 
 //데이터 없을 경우 최소화면 사이즈 = 현재 웹브라우져의 세로크기-booter size
@@ -90,8 +129,15 @@ function addShoppingItme(shoppingItem) {
         saveShoppingList();
     });
 
+    $('.card-title-edit').on("click", function (e) {
+        $(".uk-card-body").off();    
 
+        UIkit.modal("#modal-container").show();
+        e.preventDefault();        
+    });
 }
+
+
 
 function saveShoppingList() {
     var count;
