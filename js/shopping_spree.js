@@ -129,9 +129,7 @@ function resetModal() {
 function buttonClickSave(e) {
     var shoppingItem = {};
 
-    if ($('#title').val() == "" || $('#path').val() == "") {
-        $('#modal-container').addClass("uk-open");
-        resetModal();
+    if ($('#title').val() == "" || $('#path').val() == "") {                
         return;
     }
     var today=$('#date').val();
@@ -154,6 +152,7 @@ function buttonClickSave(e) {
 
     addShoppingItme(shoppingItem);
     saveShoppingList();
+    UIkit.modal("#modal-container").hide();
 }
 
 function leadingZeros(n, digits) {
