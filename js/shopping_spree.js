@@ -26,7 +26,7 @@ $(document).ready(function () {
         location.reload();
     });
 
-    $('#edit-card').off(); //기능꺼두고
+    // $('#edit-card').off(); //기능꺼두고
     $(document).on("click", '.card-title-edit', function (e) { //수정하기를 클릭했을때
         $(this).parent().parent().remove();
 
@@ -50,6 +50,20 @@ $(document).ready(function () {
 
     });
 
+    $('.card-title-comment').off(); //기능꺼두고
+    $(document).on("click", '.card-title-comment', function (e) {
+        $('#modal-reason').show();
+        UIkit.modal('.uk-modal-dialog.uk-margin-auto-vertical').show();
+        // $('#modal-container').find('#reason').val
+        var key = $(this).attr("data-key");
+        var data = localStorage.getItem("ShoppingList");
+        data = JSON.parse(data);
+        var obj = JSON.parse(data[key])
+        $(".uk-modal-dialog.uk-margin-auto-vertical").text(obj.reason);
+    });
+
+
+
 });
 
 //데이터 없을 경우 최소화면 사이즈 = 현재 웹브라우져의 세로크기-booter size
@@ -69,12 +83,12 @@ function loadShoppingList() {
     for (var index in _shoppingList) {
         var shoppingItem = JSON.parse(_shoppingList[index]);
 
-        addShoppingItme(shoppingItem);
+        addShoppingItme(shoppingItem, index);
     }
 
 }
 
-function addShoppingItme(shoppingItem) {
+function addShoppingItme(shoppingItem, index) {
     var title = shoppingItem["title"];
     var path = shoppingItem["path"];
     var price = shoppingItem["price"];
@@ -97,7 +111,7 @@ function addShoppingItme(shoppingItem) {
         '<div class="shopping-card uk-card uk-card-default uk-card-body ">' +
         '<h3 class="uk-card-title" id="card-title">' + title + '</h3>' +
         '<div id="card-icon-group">' +
-        '<span class="card-title-comment card-icon btns" uk-icon="comment">' +
+        '<span class="card-title-comment card-icon btns" data-key="' + index + '" uk-icon="comment">' +
         '</span>' +
         '<span class="card-title-edit card-icon btns" uk-icon="file-edit">' +
         '</span>' +
