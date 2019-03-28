@@ -4,7 +4,7 @@ var _listCount = 0;
 
 //최초 페이지 로드
 $(document).ready(function () {
-    setMinHeight();
+    setMinHeight();                                                                                                                                                                                                                                                                                                         
     loadShoppingList();
 
     $(document).on('click', '#uk-button-save', function (e) {
@@ -201,8 +201,13 @@ function buttonClickSave(e) {
             leadingZeros(date.getDate(), 2);
     }
 
-    shoppingItem["title"] = $('#title').val();
-    shoppingItem["path"] = $('#path').val();
+    shoppingItem["title"] = $('#title').val(); 
+        if($('#path').val().startsWith("http://")){
+            shoppingItem["path"] = $('#path').val();
+        } else{
+            shoppingItem["path"] = "http://" + $('#path').val();
+        }
+        
     shoppingItem["price"] = $('#price').val();
     shoppingItem["date"] = today;
     shoppingItem["priority"] = $('#priority').val();
