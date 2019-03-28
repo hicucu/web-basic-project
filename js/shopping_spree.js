@@ -86,10 +86,10 @@ function addShoppingItme(shoppingItem) {
     if (priority == "사줘")
         buttonHtml = '<h4 class="inline-block"><span class="uk-label sort-blue">사줘</span></h4>';
     else if (priority == "시발비용")
-        buttonHtml = '<h4 class="inline-block"><span class="uk-label-danger sort-red">시발비용</span></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label uk-label-danger sort-red">시발비용</span></h4>';
     else if (priority == "꽁돈생기면")
-        buttonHtml = '<h4 class="inline-block"><span class="uk-label-warning sort-yellow">꽁돈생기면</span></h4>';
-    else buttonHtml = '<h4 class="inline-block"><span class="uk-label-success sort-green">고민 중</span></h4>';
+        buttonHtml = '<h4 class="inline-block"><span class="uk-label uk-label-warning sort-yellow">꽁돈생기면</span></h4>';
+    else buttonHtml = '<h4 class="inline-block"><span class="uk-label uk-label-success sort-green">고민 중</span></h4>';
 
 
 
