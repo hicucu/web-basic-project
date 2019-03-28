@@ -28,8 +28,10 @@ body {
 #card-header-button {
     float: right;
 }
-
-#card-hide{
+#card-icon-group{
+    display: inline-block;
+}
+.card-hide{
     display: none;
 }
 
@@ -47,10 +49,18 @@ body {
 .uk-label-blue{
     background-color:#1e87f0;
 }
-.card-title-close{
+.card-icon{
     padding-left: 10px;    
 }
-
+.footer_right a:hover span{
+    color: #1e87f0;
+}
+.btns{
+    cursor: pointer;
+}
+.shopping-card:hover{
+    background: #9db5ce;
+}
 h1{
     font-size: 40px;
     padding: 0px;
