@@ -40,3 +40,7 @@
     top: 102px;
 
 }
+.uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical.uk-modal.uk-open{
+    width:20%;
+    height:20%;
+}
