@@ -76,7 +76,7 @@ function addShoppingItme(shoppingItem) {
         '<div id="card-reason" class="card-hide">' + reason + '</div>' +
         '</div>';
 
-    $('#card-list').append(card);
+    $('#card-list').prepend(card);
 
     $(".uk-card-body").off();
     $(".uk-card-body").on("click", function (e) {
