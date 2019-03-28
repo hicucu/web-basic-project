@@ -11,6 +11,13 @@ $(document).ready(function () {
 
         buttonClickSave(e);
     });
+    $('.uk-modal-close-default').click(function(){
+        $(".uk-card-body").off();
+        $(".uk-card-body").on("click", function (e) {
+            var path = $(this)[0].children[4].innerText;
+            window.open(path);
+        });
+    });
 });
 
 //데이터 없을 경우 최소화면 사이즈 = 현재 웹브라우져의 세로크기-booter size
@@ -90,8 +97,15 @@ function addShoppingItme(shoppingItem) {
         saveShoppingList();
     });
 
+    $('.card-title-edit').on("click", function (e) {
+        $(".uk-card-body").off();    
 
+        UIkit.modal("#modal-container").show();
+        e.preventDefault();        
+    });
 }
+
+
 
 function saveShoppingList() {
     var count;
