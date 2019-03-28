@@ -23,6 +23,7 @@ $(document).ready(function () {
             var path = $(this)[0].children[4].innerText;
             window.open(path);
         });
+        location.reload();
     });
 
     $('#edit-card').off(); //기능꺼두고
@@ -38,7 +39,15 @@ $(document).ready(function () {
         $('#modal-container').find('.uk-modal-title.edit').show();
         UIkit.modal('#modal-container').show();
 
-        $('#modal-container').find('#title').val($(currentCard).find('#card-title').text())
+        $('#modal-container').find('#title').val($(currentCard).find('#card-title').text());
+        $('#modal-container').find('#path').val($(currentCard).find('#card-path').text());
+        $('#modal-container').find('#price').val($(currentCard).find('#card-main-price').text());
+        $('#modal-container').find('#date').val($(currentCard).find('#card-main-date').text());
+        $('#modal-container').find('#priority').val($(currentCard).find('#card-fill').text());
+        $('#modal-container').find('#reason').val($(currentCard).find('#card-reason').text());
+
+
+
     });
 
 });
