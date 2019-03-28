@@ -11,6 +11,12 @@ $(document).ready(function () {
 
         buttonClickSave(e);
     });
+    // 추가버튼 클릭했을 떄
+    $('.uk-button').click(function() {
+        $('#modal-container').find('.uk-modal-title.add').show();
+        $('#modal-container').find('.uk-modal-title.edit').hide();
+    })
+
     $('.uk-modal-close-default').click(function(){
         $(".uk-card-body").off();
         $(".uk-card-body").on("click", function (e) {
@@ -18,6 +24,23 @@ $(document).ready(function () {
             window.open(path);
         });
     });
+
+    $('#edit-card').off(); //기능꺼두고
+    $(document).on("click", '.card-title-edit', function (e) { //수정하기를 클릭했을때
+        $(this).parent().parent().remove();
+
+        $(this).parent().parent().off(); //이친구의 부모에 부모꺼 오프
+
+        var currentCard = $(this).parent().parent();
+        
+        
+        $('#modal-container').find('.uk-modal-title.add').hide();
+        $('#modal-container').find('.uk-modal-title.edit').show();
+        UIkit.modal('#modal-container').show();
+
+        $('#modal-container').find('#title').val($(currentCard).find('#card-title').text())
+    });
+
 });
 
 //데이터 없을 경우 최소화면 사이즈 = 현재 웹브라우져의 세로크기-booter size
