@@ -35,11 +35,3 @@
 .uk-button uk-button-primary{
     font-size: 15px;                /* 버튼 15px*/
 }
-.uk-open{
-    width:25%;
-    height:25%;
-    border: 10px solid #1e87f0;
-    position: fixed;
-    top: 102px;
-    border-radius: 10px;
-}
