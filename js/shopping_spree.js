@@ -192,12 +192,11 @@ function addShoppingItme(shoppingItem, index) {
     $('.card-title-comment').on("click", function (e) {
         $(".uk-card-body").off();
 
-        UIkit.modal('.uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical').show();
-        var key = $(this).attr("data-key");
-        var data = localStorage.getItem("ShoppingList");
-        data = JSON.parse(data);
-        var obj = JSON.parse(data[key])
-        $(".uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical p").text(obj.reason);
+        UIkit.modal('#reason-modal').show();        
+
+        var reason = $(this).parent().parent().children()[5].innerText;
+
+        $("#reason-modal span p").text(reason);
     });
 
 }
