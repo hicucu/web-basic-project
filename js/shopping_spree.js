@@ -26,19 +26,19 @@ $(document).ready(function () {
     $('.uk-button').click(function () {
         //추가 수정 모달에서 추가하기로 보여주기
         $('#modal-container').find('.uk-modal-title.add').show(); 
-        $('#modal-container').find('.uk-modal-title.edit').hide(); 
-        resetModal();
+        $('#modal-container').find('.uk-modal-title.edit').hide();         
     })
 
     //모달 창 닫기 클릭시
     $('.uk-modal-close-default').click(function () {
+        resetModal();
         $(".uk-card-body").off(); //카드에 걸린 이벤트 삭제, 아래 이벤트 추가시 중복 추가 될 수 있어 미리 삭제 후 재 등록
 
         //카드 클릭시 저장된 인터넷 주소창 띄우기 이벤트 추가
         $(".uk-card-body").on("click", function (e) {
             var path = $(this)[0].children[4].innerText;
             window.open(path);
-        });
+        });        
     });
 
 
@@ -325,9 +325,10 @@ function buttonClickSave(e) {
 
         //카드리스트 저장
         saveShoppingList();
-
+        
         //모달 닫기
         UIkit.modal("#modal-container").hide();
+        
     }
 }
 
