@@ -27,6 +27,7 @@ $(document).ready(function () {
         //추가 수정 모달에서 추가하기로 보여주기
         $('#modal-container').find('.uk-modal-title.add').show(); 
         $('#modal-container').find('.uk-modal-title.edit').hide(); 
+        resetModal();
     })
 
     //모달 창 닫기 클릭시
