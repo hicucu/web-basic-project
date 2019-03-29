@@ -6,7 +6,7 @@
 
 body {
     background-color: #1e87f0;
-    min-width: 600px;
+    min-width: 630px;
 }
 
 /*  id  */
@@ -28,16 +28,62 @@ body {
 #card-header-button {
     float: right;
 }
+#card-icon-group{
+    display: inline-block;
+}
+.card-hide{
+    display: none;
+}
 
+.inline-block{
+    display: inline-block;
+}
+
+.main-card-filter{
+    display: inline-block;    
+    background-color: white;
+    padding: 5px 20px;    
+    border-radius: 2px;
+}
+.uk-label-blue{
+    background-color:#1e87f0;
+}
+.card-icon{
+    padding-left: 10px;    
+}
+.footer_right a:hover span{
+    color: #1e87f0;
+}
+.btns{
+    display: inline-block;
+    padding: 0 10px;    
+    line-height: 1.5;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.shopping-card:hover{
+    background: #edf7ff;
+}
 h1{
     font-size: 40px;
+    padding: 0px;
+    margin: 0px;
 }
 h2{
     font-size: 30px;
+    padding: 0px;
+    margin: 0px;
 }
 h3{
     font-size: 25px;
+    padding: 0px;
+    margin: 0px;
 }
 h4{
     font-size: 15px;
+    padding: 0px;
+    margin: 0px;
 }

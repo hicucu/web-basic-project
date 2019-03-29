@@ -4,13 +4,28 @@
 <head>
     <meta charset="utf-8">
     <title>잔고 어때?</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
     <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit-core-rtl.css" />
+    <link rel="stylesheet" href="css/uikit-rtl.min.css" />
+    <link rel="stylesheet" href="css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <!-- UIkit JS -->
+
     <link rel="stylesheet" href="css/shopping_spree.css" />
     <link rel="stylesheet" href="css/shopping_spree_bs.css" />
     <link rel="stylesheet" href="css/shopping_spree_gy.css" />
-    <script src="js/shopping_spree.js"></script>
+
+    <!-- 벚꽃잎 효과 -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/jquery-sakura.min.js"></script>
+    <link href="js/jqery-sakura.css" rel="stylesheet" type="text/css">
+    
+
+
 </head>
 
 <!--body-->
@@ -24,77 +39,74 @@
 
 
         <!--modal-->
-        <div id="modal_origin">
-            <div id="modal_box">
-                <a class="uk-button uk-button-default" href="#modal-container" uk-toggle>Open</a>
+        <!-- <a class="uk-button uk-button-default" href="#modal-container" uk-toggle>Open</a> -->
+        <!-- <div id="modal-reason">
+            <div class="uk-modal-dialog uk-margin-auto-vertical">
+                <button class="uk-modal-close-default" type="button"></button>
+            </div>
+        </div> -->
 
-                <div id="modal-container" class="uk-modal-container" uk-modal>
-                    <div class="uk-modal-dialog uk-modal-body">
-                        <button class="uk-modal-close-default" type="button" uk-close></button>
-                        <div><button class="uk-button uk-button-primary">저장</button></div>
-                        <h2 class="uk-modal-title">추가하기</h2>
-                        <div><button class="uk-button uk-button-primary">저장</button></div>
-                        <div>
+        <div id="modal-reason" class="uk-flex-top" uk-modal>
+            <div id="reason-modal" class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 
-                            <form>
-                                <fieldset class="uk-fieldset">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
 
-                                    <!-- <legend class="uk-legend">제목</legend> -->
-                                    <input class="uk-input" type="text" placeholder="제목을 입력하세요">
+                <span><p> asd</p></span>
 
-                                    <div class="uk-margin">
-                                        <input class="uk-input" type="text" placeholder="경로를 입력하세요">
-                                    </div>
-
-                                    <div class="uk-margin">
-                                        <input class="uk-input" type="date" placeholder="경로를 입력하세요">
-                                    </div>
-
-                                    <div class="uk-margin">
-                                        <select class="uk-select" value="우선순위를 선택하세요">
-                                            <option>우선순위를 선택하세요</option>
-                                            <option>우선순위 01</option>
-                                            <option>우선순위 02</option>
-                                            <option>우선순위 03</option>
-                                            <option>우선순위 04</option>
-                                            <option>우선순위 05</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="uk-margin">
-                                        <textarea class="uk-textarea" rows="5" placeholder="이유"></textarea>
-                                    </div>
-
-                                    <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-                                        <label><input class="uk-radio" type="radio" name="radio2" checked> 체크박스</label>
-                                        <label><input class="uk-radio" type="radio" name="radio2"> 쓸일이 있을까</label>
-                                    </div>
-
-                                    <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-                                        <label><input class="uk-checkbox" type="checkbox" checked> 일단은</label>
-                                        <label><input class="uk-checkbox" type="checkbox"> 넣어둡니다</label>
-                                    </div>
-
-                                    <div class="uk-margin">
-                                        <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1">범위
-                                        정하는것도 쓸일이 있을까요?
-                                    </div>
-                                    <div><button class="uk-button uk-button-primary">저장</button></div><!-- 저장3-->
-
-                                </fieldset>
-                            </form>
-
-
-                        </div>
-
-
-
-
-
-                    </div>
-                </div>
             </div>
         </div>
+
+
+        <div id="modal-container" class="uk-modal-container" uk-modal esc-close="false" bg-close="false">
+            <div class="uk-modal-dialog uk-modal-body">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h2 class="uk-modal-title add">추가하기</h2>
+                <h2 class="uk-modal-title edit">수정하기</h2>
+                <div>
+
+                    <form>
+                        <fieldset class="uk-fieldset">
+
+                            <input id="title" class="uk-input" type="text" placeholder="제목을 입력하세요<필수>">
+
+                            <div class="uk-margin">
+                                <input id="path" class="uk-input" type="text" placeholder="경로를 입력하세요<필수>">
+                            </div>
+
+                            <input id="price" class="uk-input" type="text" placeholder="가격을 입력하세요">
+
+                            <div class="uk-margin">
+                                <input id="date" class="uk-input" type="date">
+                            </div>
+
+                            <div class="uk-margin">
+                                <select id="priority" class="uk-select" value="우선순위를 선택하세요">
+                                    <option>우선순위를 선택하세요</option>
+                                    <option>사줘</option>
+                                    <option>시발비용</option>
+                                    <option>꽁돈생기면</option>
+                                    <option>고민 중</option>
+
+                                </select>
+                            </div>
+
+                            <div class="uk-margin">
+                                <textarea id="reason" class="uk-textarea" rows="5" placeholder="이유"></textarea>
+                            </div>
+                            <div><button id="uk-button-save" class="uk-button uk-button-primary"
+                                    type="button">저장</button></div><!-- 저장3-->
+
+
+
+                        </fieldset>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+
         <!--modal-->
 
 
@@ -108,34 +120,30 @@
 
                     <!--card-->
                     <div id="card-header" class="uk-panel uk-light uk-margin-medium">
-                        <h3 id="card-header-title">잔고 어때?</h3>
+                        <h1 id="card-header-title" class="btns">잔고 어때?</h1>
                         <div id="card-header-button">
-                            <a href="#" uk-icon="icon: plus"></a>
+
+
+                            <div class="main-card-filter">
+                                <h4 class="inline-block"><span id="sort-blue"
+                                        class="uk-label-blue btns uk-label-border btns ">사줘</span></h4>
+                                <h4 class="inline-block"><span id="sort-red"
+                                        class="uk-label-danger uk-label-border btns">시발비용</span></h4>
+                                <h4 class="inline-block"><span id="sort-yellow"
+                                        class="uk-label-warning uk-label-border btns">꽁돈생기면</span></h4>
+                                <h4 class="inline-block"><span id="sort-green"
+                                        class="uk-label-success uk-label-border btns">고민 중</span></h4>
+                            </div>
+                            <a class="uk-button btns" href="#modal-container" uk-icon="icon: plus" uk-toggle></a>
                         </div>
                     </div>
                     <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
-                        <div>
+                        <div id="card-list">
 
 
-                            
 
-                            <!--card-main-->
-                            <div class="uk-card uk-card-default uk-card-body">
-                                <h3 class="uk-card-title">Default</h3>
-                                <span id="card-main-date" class="uk-badge">2019.03.25</span>
-                                <div class="uk-grid-small" uk-grid>
-                                    <div class="uk-width-expand" uk-leader="fill: -">
-                                        <span class="uk-label-danger">시발비용</span>
-                                        <span class="uk-label-warning">꽁돈생기면</span>
-                                        <span class="uk-label-success">고민 중</span>
-                                        <span class="uk-label">사줘</span>
-                                    </div>
-                                    <div id="card-main-price">
-                                        $20.90
-                                    </div>
-                                </div>
-                            </div>
-                            <!--card-main-->
+
+
 
 
                         </div>
@@ -146,22 +154,53 @@
                 <!--cards-->
 
 
-                                                                                                 
+
             </div>
         </div>
         <!--main-->
 
         <!--footer-->
         <div id="footer">
+            <div class="footer_inner">
+                <div class="footer_left">
+                    <h2>잔고 어때?</h2>
+                </div>
+                <div class="footer_middle">
+                    <div>
 
-            <h2>잔고 어때?</h2>
-            <div class="footer_text">
-                <span>37, Seongsui-ro 22-gil, Seongdong-gu, Seoul, Republic of Korea</span>
-                <span>+82 555 123456</span>
-                <span>school@fastcampus.com</span>
+                        <h4><span uk-icon="mail" class="footer_icon"></span><span
+                                class="footer_text">gayoungaa91@gmail.com</span></h4>
+                        <h4><span uk-icon="mail" class="footer_icon"></span><span
+                                class="footer_text">hbsowo58@gmail.com</span></h4>
+                        <h4><span uk-icon="mail" class="footer_icon"></span><span
+                                class="footer_text">hicucu@gmail.com</span></h4>
+                    </div>
+                    <span id="footer_copy">Copyright 2019 - All Rights Reserved</span>
+                </div>
+                <div class="footer_right">
+                    <div class="footer_right_top">
+                        <a href="https://github.com/hicucu" target="_blank"><span uk-icon="github"
+                                class="footer_right_icon" title="김들이"></span></a>
+                        <a href="https://github.com/gayoungaa91" target="_blank"><span uk-icon="github"
+                                class="footer_right_icon" title="이가영"></span></a>
+                        <a href="https://github.com/hbsowo58" title="허범성" target="_blank"><span uk-icon="github"
+                                class="footer_right_icon"></span></a>
+                    </div>
+                    <div class="footer_right_top">
+                        <a href="https://www.facebook.com/profile.php?id=100003396948983" target="_blank"
+                            title="허범성"><span uk-icon="facebook" class="footer_right_icon"></span></a>
+                        <a href="https://www.instagram.com/gayoungaa/" target="_blank" title="이가영"><span
+                                uk-icon="instagram" class="footer_right_icon"></span></a>
+                        <a href="https://www.instagram.com/hicucu" target="_blank" title="김들이"><span uk-icon="instagram"
+                                class="footer_right_icon"></span></a>
+
+                    </div>
+
+                </div>
+
+
             </div>
-            <span class="footer_copy">Copyright 2019 - All Rights Reserved</span>
-            
+
 
         </div>
         <!--footer-->
@@ -174,14 +213,23 @@
 
 
 
+
     <!-- UIkit JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
     <!-- UIkit JS -->
+    <script src="js/shopping_spree.js"></script>
+    <script>
+    $(window).load(function () {
 
+        $('body').sakura();
+
+    });
+    </script>
+   
     <!--script-->
 </body>
 <!--body-->
 
 
-</html>
+</html>  
