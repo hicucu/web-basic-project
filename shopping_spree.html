@@ -19,7 +19,10 @@
     <link rel="stylesheet" href="css/shopping_spree_bs.css" />
     <link rel="stylesheet" href="css/shopping_spree_gy.css" />
 
+    <!-- 벚꽃잎 효과 -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/jquery-sakura.min.js"></script>
+    <link href="js/jqery-sakura.css" rel="stylesheet" type="text/css">
     
 
 
@@ -216,11 +219,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
     <!-- UIkit JS -->
     <script src="js/shopping_spree.js"></script>
+    <script>
+    $(window).load(function () {
 
+        $('body').sakura();
+
+    });
+    </script>
    
     <!--script-->
 </body>
 <!--body-->
 
 
-</html>
+</html>  
